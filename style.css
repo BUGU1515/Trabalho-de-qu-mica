@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a472a, #0a1a0f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+}
+
+.container {
+    position: relative;
+    background: #2a1a0a;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.question {
+    background: #1e3a5f;
+    color: #ffd700;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.level {
+    background: #2d5016;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.timer {
+    background: #8B0000;
+    color: #FFD700;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.timer-warning {
+    animation: blink 0.5s infinite;
+    background: #ff0000;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#gameCanvas {
+    border: 3px solid #ffd700;
+    border-radius: 10px;
+    background: #1a1a2e;
+    display: block;
+    cursor: pointer;
+}
+
+.controls-info {
+    margin-top: 15px;
+    text-align: center;
+    color: #ffd700;
+    font-size: 14px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    border-radius: 20px;
+}
+
+.start-screen h1 {
+    color: #ffd700;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.start-screen p {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.start-screen button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    margin-top: 20px;
+}
+
+.start-screen button:hover {
+    transform: scale(1.05);
+    background: #ff8800;
+}
+
+.feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 150;
+    animation: fadeOut 1s ease-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+}
+
+.fade-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 300;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.fade-transition.active {
+    opacity: 0.8;
+    pointer-events: auto;
+}

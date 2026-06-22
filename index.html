@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maze - Labirinto Termoquímico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="question" id="question">Carregando...</div>
+            <div class="level" id="level">Nível 1/5</div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls-info">
+             WASD ou SETAS para mover | Toque nas respostas corretas
+        </div>
+        <div id="startScreen" class="start-screen">
+            <h1>🧪 QUIZ MAZE 🧪</h1>
+            <p>Responda as questões de Termoquímica</p>
+            <p>Encontre a resposta correta e depois passe pela porta</p>
+            <p>⏱️ Você tem 50 segundos por fase!</p>
+            <button onclick="iniciarJogo()">🚀 COMEÇAR</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
