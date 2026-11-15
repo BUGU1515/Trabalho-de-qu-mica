@@ -5,25 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Maze - Labirinto Termoquímico</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="question" id="question">Carregando...</div>
             <div class="level" id="level">Nível 1/5</div>
+            <div class="hearts-box" aria-label="Vidas restantes">
+                <img id="heart0" src="./imagens.png/coração_png.png" alt="Coração cheio">
+                <img id="heart1" src="./imagens.png/coração_png.png" alt="Coração cheio">
+            </div>
+            <div class="timer" id="timer">⏱️ 50s</div>
         </div>
         <canvas id="gameCanvas"></canvas>
-        <div class="controls-info">
-             WASD ou SETAS para mover | Toque nas respostas corretas
+        <div id="startScreen" class="scene-screen">
+            <img class="scene-background" src="./imagens.png/Tela_abertura.png" alt="Tela inicial do TermoQuiz">
+            <button id="startButton" class="scene-button start-button" aria-label="Jogar">
+                <img src="./imagens.png/botão_jogar.png" alt="Jogar">
+            </button>
         </div>
-        <div id="startScreen" class="start-screen">
-            <h1>🧪 QUIZ MAZE 🧪</h1>
-            <p>Responda as questões de Termoquímica</p>
-            <p>Encontre a resposta correta e depois passe pela porta</p>
-            <p>⏱️ Você tem 50 segundos por fase!</p>
-            <button onclick="iniciarJogo()">🚀 COMEÇAR</button>
+        <div id="instructionsScreen" class="scene-screen" hidden>
+            <img class="scene-background" src="./imagens.png/tela_como_jogar.png" alt="Instruções do TermoQuiz">
+            <button id="continueButton" class="scene-button continue-button" aria-label="Continuar">
+                <img src="./imagens.png/botão_continuar.png" alt="Continuar">
+            </button>
         </div>
+        <div id="victoryScreen" class="scene-screen" hidden>
+            <img class="scene-background" src="./imagens.png/tela_vitória.png" alt="Vitória no TermoQuiz">
+            <button id="restartButton" class="scene-button restart-button" aria-label="Recomeçar">
+                <img src="./imagens.png/botâo_recomeçar.png" alt="Recomeçar TermoQuiz">
+            </button>
+        </div>
+        <img id="robotImage" class="asset-image" src="./imagens.png/robô.png" alt="">
+        <img id="doorImage" class="asset-image" src="./imagens.png/porta.png" alt="">
+        <img id="openDoorImage" class="asset-image" src="./imagens.png/porta_aberta_transparente.png" alt="">
+        <img id="keyImage" class="asset-image" src="./imagens.png/chave.png" alt="">
+        <img id="plateImage" class="asset-image" src="./imagens.png/placa.png" alt="">
+        <img id="pressedPlateImage" class="asset-image" src="./imagens.png/placa_ativada.png" alt="">
+        <img id="fullHeartImage" class="asset-image" src="./imagens.png/coração_png.png" alt="">
+        <img id="emptyHeartImage" class="asset-image" src="./imagens.png/coração_vazio.png" alt="">
     </div>
-    <script src="script.js"></script>
+    <script type="py" src="./game.py"></script>
 </body>
 </html>
